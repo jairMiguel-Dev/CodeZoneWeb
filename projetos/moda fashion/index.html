@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>E-commerce de Pijamas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+        }
+        header, footer {
+            background-color: #000;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+        }
+        header h1, footer p {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        header video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem 0;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.75rem 1.25rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: 500;
+        }
+        nav a:hover {
+            background-color: #555;
+            color: #fff;
+        }
+        .container {
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        section {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        section img {
+            max-width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        section img:hover {
+            transform: scale(1.05);
+        }
+        hgroup {
+            margin-bottom: 1rem;
+        }
+        h2 {
+            font-size: 2.5rem;
+            color: #444;
+            font-family: 'Playfair Display', serif;
+        }
+        h3 {
+            font-size: 1.75rem;
+            color: #666;
+        }
+        .subscribe {
+            background-color: #000;
+            color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .subscribe h2, .subscribe h3 {
+            color: #fff;
+            font-family: 'Playfair Display', serif;
+        }
+        .subscribe form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .subscribe form input, .subscribe form button {
+            padding: 0.75rem;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        .subscribe form input {
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+        .subscribe form button {
+            background-color: #ff6347;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .subscribe form button:hover {
+            background-color: #e5533d;
+        }
+        footer small a {
+            color: #fff;
+            text-decoration: none;
+        }
+        footer small a:hover {
+            text-decoration: underline;
+        }
+        .testimonials {
+            background-color: #fff;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        .testimonials.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .testimonial {
+            padding: 1rem;
+            max-width: 600px;
+            margin: auto;
+        }
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+        .testimonial h3 {
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+        .slick-slide {
+            outline: none;
+        }
+        .image-slider img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .social-icons {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .social-icons a {
+            color: #fff;
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #ff6347;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: auto;
+            padding: 2rem;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .close-modal {
+            background-color: #ff6347;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.25rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .close-modal:hover {
+            background-color: #e5533d;
+        }
+        section.animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.5s ease;
+        }
+        section.animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <video autoplay muted loop>
+        <source src="https://www.videvo.net/videvo_files/converted/2016_07/preview/160701_005_Cityscape_1080p.mp4" type="video/mp4">
+    </video>
+    <div class="container">
+        <h1>Pijamas Deslumbrantes</h1>
+        <p>Conforto e estilo para toda a família</p>
+    </div>
+</header>
+
+<nav class="container-fluid">
+    <ul>
+        <li><a href="#" role="button"><strong>Loja de Pijamas</strong></a></li>
+    </ul>
+    <ul>
+        <li><a href="#infantil">Infantil</a></li>
+        <li><a href="#masculino">Masculino</a></li>
+        <li><a href="#feminino">Feminino</a></li>
+        <li><a href="#contato" role="button">Contato</a></li>
+    </ul>
+</nav>
+
+<main class="container">
+    <div class="grid">
+        <section id="infantil" class="animate">
+            <hgroup>
+                <h2>Pijamas Infantis</h2>
+                <h3>Conforto e diversão para os pequenos</h3>
+            </hgroup>
+            <p>Descubra nossa coleção de pijamas infantis, perfeitos para garantir noites de sono tranquilas e cheias de conforto.</p>
+            <figure>
+                <img src="https://images.unsplash.com/photo-1598511720650-8608c39f6a97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzU3MXwwfDF8c2VhcmNofDF8fGtpZHMlMjBweWphbWFzfGVufDB8fHx8MTY4MDM2MDI2Ng&ixlib=rb-4.0.3&q=80&w=1080" alt="Pijamas Infantis">
+                <figcaption><a href="https://unsplash.com/photos/WUydTfaP3t4" target="_blank">Veja mais pijamas infantis</a></figcaption>
+            </figure>
+        </section>
+
+        <section id="masculino" class="animate">
+            <hgroup>
+                <h2>Pijamas Masculinos</h2>
+                <h3>Estilo e conforto para homens</h3>
+            </hgroup>
+            <p>Nossa linha de pijamas masculinos oferece estilo e conforto, garantindo noites de sono tranquilas e cheias de elegância.</p>
+            <figure>
+                <img src="https://images.unsplash.com/photo-1580631377075-45b1b49afca3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzU3MXwwfDF8c2VhcmNofDJ8fG1lbnMlMjBweWphbWFzfGVufDB8fHx8MTY4MDM2MDQ2MQ&ixlib=rb-4.0.3&q=80&w=1080" alt="Pijamas Masculinos">
+                <figcaption><a href="https://unsplash.com/photos/2egNqazbAMk" target="_blank">Veja mais pijamas masculinos</a></figcaption>
+            </figure>
+        </section>
+
+        <section id="feminino" class="animate">
+            <hgroup>
+                <h2>Pijamas Femininos</h2>
+                <h3>Elegância e conforto para mulheres</h3>
+            </hgroup>
+            <p>Explore nossa coleção de pijamas femininos, que combinam elegância e conforto para proporcionar uma noite de sono perfeita.</p>
+            <figure>
+                <img src="https://images.unsplash.com/photo-1600548127505-f5c6a4fa5a14?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzU3MXwwfDF8c2VhcmNofDF8fHdvbWVuJTIwc2xlZXB3ZWFyfGVufDB8fHx8MTY4MDM2MDYxMg&ixlib=rb-4.0.3&q=80&w=1080" alt="Pijamas Femininos">
+                <figcaption><a href="https://unsplash.com/photos/7IxwhSnywVo" target="_blank">Veja mais pijamas femininos</a></figcaption>
+            </figure>
+        </section>
+    </div>
+
+    <section class="testimonials animate">
+        <hgroup>
+            <h2>O que nossos clientes dizem</h2>
+        </hgroup>
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <p>"Os pijamas são extremamente confortáveis e estilosos! Minha família adora!"</p>
+                <h3>- Maria S.</h3>
+            </div>
+            <div class="testimonial">
+                <p>"Adorei a variedade de pijamas para todas as idades. Ótima qualidade!"</p>
+                <h3>- João P.</h3>
+            </div>
+            <div class="testimonial">
+                <p>"Excelente atendimento ao cliente e produtos maravilhosos. Recomendo!"</p>
+                <h3>- Ana L.</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="image-slider animate">
+        <hgroup>
+            <h2>Galeria de Imagens</h2>
+        </hgroup>
+        <div class="slider">
+            <div><img src="https://images.unsplash.com/photo-1598511720650-8608c39f6a97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzU3MXwwfDF8c2VhcmNofDF8fGtpZHMlMjBweWphbWFzfGVufDB8fHx8MTY4MDM2MDI2Ng&ixlib=rb-4.0.3&q=80&w=1080" alt="Pijamas Infantis"></div>
+            <div><img src="https://images.unsplash.com/photo-1580631377075-45b1b49afca3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzU3MXwwfDF8c2VhcmNofDJ8fG1lbnMlMjBweWphbWFzfGVufDB8fHx8MTY4MDM2MDQ2MQ&ixlib=rb-4.0.3&q=80&w=1080" alt="Pijamas Masculinos"></div>
+            <div><img src="https://images.unsplash.com/photo-1600548127505-f5c6a4fa5a14?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzU3MXwwfDF8c2VhcmNofDF8fHdvbWVuJTIwc2xlZXB3ZWFyfGVufDB8fHx8MTY4MDM2MDYxMg&ixlib=rb-4.0.3&q=80&w=1080" alt="Pijamas Femininos"></div>
+        </div>
+    </section>
+
+</main>
+
+<section aria-label="Subscribe example">
+    <div class="container">
+        <article class="subscribe">
+            <hgroup>
+                <h2>Assine nossa Newsletter</h2>
+                <h3>Receba novidades e promoções exclusivas</h3>
+            </hgroup>
+            <form>
+                <input type="text" id="firstname" name="firstname" placeholder="Seu nome" aria-label="Seu nome" required />
+                <input type="email" id="email" name="email" placeholder="Seu email" aria-label="Seu email" required />
+                <button type="submit" onclick="event.preventDefault()">Inscrever-se</button>
+            </form>
+        </article>
+    </div>
+</section>
+
+<footer class="container">
+    <small><a href="#sobre">Sobre nós</a> • <a href="#termos">Termos de uso</a></small>
+    <p>&copy; 2024 Pijamas Deslumbrantes. Todos os direitos reservados.</p>
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</footer>
+
+<!-- Modal Structure -->
+<div id="modal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-content">
+        <h3 id="modalTitle">Contato</h3>
+        <p>Para mais informações, entre em contato conosco pelo email: contato@pijamasdeslumbrantes.com</p>
+        <button type="button" class="close-modal" onclick="closeModal()">Fechar</button>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.testimonial-slider').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: false,
+            dots: true
+        });
+
+        $('.slider').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: true,
+            dots: false
+        });
+
+        $('nav a').on('click', function(event) {
+            if ($(this).attr('href') === '#contato') {
+                event.preventDefault();
+                openModal();
+            }
+        });
+
+        // Animate elements on scroll
+        const sections = document.querySelectorAll('.animate');
+        const options = {
+            root: null,
+            threshold: 0.1,
+            rootMargin: "0px"
+        };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+
+    function openModal() {
+        $('#modal').show();
+    }
+
+    function closeModal() {
+        $('#modal').hide();
+    }
+</script>
+
+<style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+    }
+    .modal-content {
+        background-color: #fff;
+        margin: auto;
+        padding: 2rem;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .close-modal {
+        background-color: #ff6347;
+        color: #fff;
+        border: none;
+        padding: 0.75rem 1.25rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .close-modal:hover {
+        background-color: #e5533d;
+    }
+    section.animate {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.5s ease;
+    }
+    section.animate.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+
+</body>
+</html>

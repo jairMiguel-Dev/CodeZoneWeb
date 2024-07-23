@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CodeZone - Agradecimento</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #1d1f21, #4a4a4a);
+            color: #fff;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+            animation: fadeInDown 1s;
+        }
+
+        .container h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #00aaff;
+            animation: pulse 2s infinite;
+        }
+
+        .container p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .container a {
+            display: inline-block;
+            padding: 15px 30px;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #fff;
+            background: #00aaff;
+            border: none;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+            animation: pulse 2s infinite alternate;
+        }
+
+        .container a:hover {
+            background: #0077cc;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 15px #00aaff;
+            }
+            100% {
+                box-shadow: 0 0 25px #0077cc;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container animate__animated animate__fadeInDown">
+        <h1>Obrigado pelo Contato!</h1>
+        <p>Sua mensagem foi enviada com sucesso. Em breve entraremos em contato.</p>
+        <a href="index.html">Voltar ao Início</a>
+    </main>
+</body>
+
+</html>

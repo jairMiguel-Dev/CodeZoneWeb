@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visão Missionária</title>
+    <link rel="stylesheet" href="./asset/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="hero">
+            <h1 class="hero-title">Visão Missionária</h1>
+            <p class="hero-title">Agora na sua casa</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about"><i class="fas fa-info-circle"></i> Sobre Nós</a></li>
+            <li><a href="#live"><i class="fas fa-video"></i> Cultos ao Vivo</a></li>
+            <li><a href="#tithes"><i class="fas fa-hand-holding-usd"></i> Dízimos</a></li>
+            <li><a href="#biblestudies"><i class="fas fa-book"></i> Estudos Bíblicos</a></li>
+            <li><a href="#faq"><i class="fas fa-question-circle"></i> Perguntas Frequentes</a></li>
+            <li><a href="#gallery"><i class="fas fa-images"></i> Galeria</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contato</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="about" class="about">
+            <h2>Quem somos?</h2>
+            <p>##</p>
+        </section>
+
+        <section id="banner" class="banner">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="./asset/img/Confêrencia.png" style="width:100%">
+                    <div class="text">Culto de Domingo</div>
+                </div>
+                <div class="mySlides fade">
+                    <img src="./asset/img/Confêrencia.png" style="width:100%">
+                    <div class="text">Culto de Terça-feira</div>
+                </div>
+                <div class="mySlides fade">
+                    <img src="./asset/img/Confêrencia.png" style="width:100%">
+                    <div class="text">Culto de Sexta-feira</div>
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </section>
+        
+        <section id="live" class="live">
+            <h2>Culto ao Vivo</h2>
+            <div class="live-stream">
+                <iframe src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="biblestudies" class="biblestudies">
+            <h2>Estudos Bíblicos</h2>
+            <div class="study">
+                <h3>Estudo 1: A Fé</h3>
+                <p>Este estudo bíblico examina a fé, um elemento central da vida cristã. Exploraremos o significado da fé, sua importância para agradar a Deus, e exemplos inspiradores de fé nas Escrituras. Aprenderemos como a fé nos sustenta em tempos de dificuldade e como podemos crescer na fé, confiando nas promessas de Deus e vivendo segundo a Sua palavra.</p>
+                <button onclick="showStudyDetails(1)">Ver Mais</button>
+                <div id="study1" class="study-details">
+                    <p><strong>Definição de Fé</strong><br>
+                       A fé pode ser entendida como a certeza das coisas que esperamos e a convicção de fatos que não vemos.
+                    </p>
+                    <p><strong>Hebreus 11:1</strong><br>
+                        <blockquote>"Ora, a fé é a certeza daquilo que esperamos e a prova das coisas que não vemos."</blockquote>
+                    </p>
+                    <p><strong>A Importância da Fé</strong><br>
+                       A fé é essencial para agradar a Deus e é através dela que recebemos Suas promessas.
+                    </p>
+                    <p><strong>Hebreus 11:6</strong><br>
+                        <blockquote>"Sem fé é impossível agradar a Deus, pois quem dele se aproxima precisa crer que ele existe e que recompensa aqueles que o buscam."</blockquote>
+                    </p>
+                    <p><strong>Exemplos de Fé na Bíblia</strong><br>
+                       <strong>Abraão:</strong> Conhecido como o "pai da fé", Abraão obedeceu a Deus e deixou sua terra natal sem saber para onde estava indo, confiando plenamente nas promessas de Deus.
+                    </p>
+                    <p><strong>Romanos 4:20-21</strong><br>
+                        <blockquote>"Ele não duvidou da promessa de Deus, mas foi fortalecido em sua fé e deu glória a Deus, estando plenamente convencido de que Deus era poderoso para cumprir o que havia prometido."</blockquote>
+                    </p>
+                    <p><strong>Moisés:</strong> Pela fé, Moisés escolheu ser maltratado junto com o povo de Deus em vez de desfrutar os prazeres do pecado por um tempo.
+                    </p>
+                    <p><strong>Hebreus 11:24-25</strong><br>
+                        <blockquote>"Pela fé Moisés, já adulto, recusou ser chamado filho da filha de Faraó, preferindo ser maltratado com o povo de Deus a desfrutar os prazeres do pecado durante algum tempo."</blockquote>
+                    </p>
+                    <p><strong>Noé:</strong> Noé, pela fé, construiu uma arca para salvar sua família, obedecendo a Deus mesmo sem ver a chuva.
+                    </p>
+                    <p><strong>Hebreus 11:7</strong><br>
+                        <blockquote>"Pela fé Noé, quando avisado sobre coisas que ainda não se viam, movido por santo temor, construiu uma arca para salvar sua família. Por meio da fé ele condenou o mundo e tornou-se herdeiro da justiça que é segundo a fé."</blockquote>
+                    </p>
+                    <p><strong>Fé em Meio às Dificuldades</strong><br>
+                       A fé nos sustenta nas provações e dificuldades, permitindo-nos confiar que Deus está no controle e tem um propósito para cada situação.
+                    </p>
+                    <p><strong>Tiago 1:2-3</strong><br>
+                        <blockquote>"Meus irmãos, considerem motivo de grande alegria o fato de passarem por diversas provações, pois sabem que a prova da sua fé produz perseverança."</blockquote>
+                    </p>
+                    <p><strong>A Fé que Move Montanhas</strong><br>
+                       Jesus nos ensina que, mesmo uma pequena quantidade de fé pode fazer grandes coisas, se estiver fundamentada em Deus.
+                    </p>
+                    <p><strong>Mateus 17:20</strong><br>
+                        <blockquote>"Ele respondeu: 'Porque a sua fé é pequena. Eu lhes asseguro que, se vocês tiverem fé do tamanho de um grão de mostarda, poderão dizer a este monte: Vá daqui para lá, e ele irá. Nada lhes será impossível.'"</blockquote>
+                    </p>
+                    <p><strong>A Fé em Jesus Cristo</strong><br>
+                       A fé em Jesus Cristo é o fundamento da salvação. Através dEle, recebemos a vida eterna e a reconciliação com Deus.
+                    </p>
+                    <p><strong>Efésios 2:8-9</strong><br>
+                        <blockquote>"Pois vocês são salvos pela graça, por meio da fé, e isto não vem de vocês, é dom de Deus; não por obras, para que ninguém se glorie."</blockquote>
+                    </p>
+                    <p><strong>Crescendo na Fé</strong><br>
+                       A fé pode e deve crescer à medida que caminhamos com Deus, alimentando-nos da Sua palavra e vivendo em obediência.
+                    </p>
+                    <p><strong>Romanos 10:17</strong><br>
+                        <blockquote>"Consequentemente, a fé vem por se ouvir a mensagem, e a mensagem é ouvida mediante a palavra de Cristo."</blockquote>
+                    </p>
+                </div>
+            </div>        
+            <div class="study">
+                <h3>Estudo 2: O Amor</h3>
+                <p>Este estudo bíblico explora o amor, a essência do caráter de Deus. Através de diversos versículos, aprenderemos sobre o amor ao próximo, o amor de Deus por nós, o amor sacrificial de Jesus e como devemos amar incondicionalmente. Este estudo nos ajudará a compreender a profundidade e a importância do amor em nossa caminhada cristã.</p>
+                <button onclick="showStudyDetails(2)">Ver Mais</button>
+                <div id="study2" class="study-details">
+                    <p><strong>Definição de Amor</strong><br>
+                       O amor é a essência do caráter de Deus e é o fundamento de todos os Seus mandamentos.
+                    </p>
+                    <p><strong>1 João 4:8</strong><br>
+                        <blockquote>"Quem não ama não conhece a Deus, porque Deus é amor."</blockquote>
+                    </p>
+                    <p><strong>O Amor ao Próximo</strong><br>
+                       Jesus nos ensina que devemos amar o nosso próximo como a nós mesmos.
+                    </p>
+                    <p><strong>Mateus 22:37-39</strong><br>
+                        "Respondeu Jesus: <blockquote>'Ame o Senhor, o seu Deus, de todo o seu coração, de toda a sua alma e de todo o seu entendimento.' Este é o primeiro e maior mandamento. E o segundo é semelhante a ele: 'Ame o seu próximo como a si mesmo.'"</blockquote>
+                    </p>
+                    <p><strong>O Amor de Deus por Nós</strong><br>
+                       Deus nos amou tanto que enviou Seu Filho único para nos salvar.
+                    </p>
+                    <p><strong>João 3:16</strong><br>
+                        <blockquote>"Porque Deus tanto amou o mundo que deu o seu Filho Unigênito, para que todo o que nele crer não pereça, mas tenha a vida eterna."</blockquote>
+                    </p>
+                    <p><strong>Amar os Inimigos</strong><br>
+                       Jesus nos desafia a amar não apenas os nossos amigos, mas também os nossos inimigos.
+                    </p>
+                    <p><strong>Mateus 5:44</strong><br>
+                        <blockquote>"Mas eu lhes digo: Amem os seus inimigos e orem por aqueles que os perseguem."</blockquote>
+                    </p>
+                    <p><strong>O Amor é Paciente e Bondoso</strong><br>
+                       O amor verdadeiro é descrito de forma bela em 1 Coríntios 13.
+                    </p>
+                    <p><strong>1 Coríntios 13:4-7</strong><br>
+                        <blockquote>"O amor é paciente, o amor é bondoso. Não inveja, não se vangloria, não se orgulha. Não maltrata, não procura seus interesses, não se ira facilmente, não guarda rancor. O amor não se alegra com a injustiça, mas se alegra com a verdade. Tudo sofre, tudo crê, tudo espera, tudo suporta."</blockquote>
+                    </p>
+                    <p><strong>O Maior Mandamento</strong><br>
+                       O amor é o cumprimento da lei e o maior mandamento de todos.
+                    </p>
+                    <p><strong>Romanos 13:8</strong><br>
+                        <blockquote>"Não devam nada a ninguém, a não ser o amor de uns pelos outros, pois quem ama seu próximo tem cumprido a lei."</blockquote>
+                    </p>
+                    <p><strong>Amor Sacrificial</strong><br>
+                       Jesus é o maior exemplo de amor sacrificial.
+                    </p>
+                    <p><strong>João 15:13</strong><br>
+                        <blockquote>"Ninguém tem maior amor do que aquele que dá a sua vida pelos seus amigos."</blockquote>
+                    </p>
+                    <p><strong>O Amor de Cristo</strong><br>
+                       Devemos amar como Cristo nos amou.
+                    </p>
+                    <p><strong>Efésios 5:2</strong><br>
+                        <blockquote>"E vivam em amor, como também Cristo nos amou e se entregou por nós como oferta e sacrifício de aroma agradável a Deus."</blockquote>
+                    </p>
+                    <p><strong>Amor Incondicional</strong><br>
+                       O amor de Deus por nós é incondicional e eterno.
+                    </p>
+                    <p><strong>Romanos 8:38-39</strong><br>
+                        <blockquote>"Pois estou convencido de que nem morte nem vida, nem anjos nem demônios, nem o presente nem o futuro, nem quaisquer poderes, nem altura nem profundidade, nem qualquer outra coisa na criação será capaz de nos separar do amor de Deus que está em Cristo Jesus, nosso Senhor."</blockquote>
+                    </p>
+                </div>
+            </div>  
+                                <!-- Botão "Ver mais estudos" -->
+                    <div class="more-studies-button-container">
+                        <button href="" class="more-studies-button" onclick="window.location.href='./asset/Pages/estudos.html'">Ver Mais Estudos</button>
+                    </div>
+        
+        </section>
+
+        <section id="gallery" class="gallery">
+            <h2>Galeria</h2>
+            <div class="gallery-container">
+                <img src="foto1.jpg" alt="Foto 1">
+                <img src="foto2.jpg" alt="Foto 2">
+                <img src="foto3.jpg" alt="Foto 3">
+                <img src="foto4.jpg" alt="Foto 4">
+            </div>
+        </section>
+
+        <section id="tithes" class="tithes">
+            <h2>Area de Dízimos</h2>
+            <p>Contribua com seu dízimo para ajudar a nossa igreja a crescer e alcançar mais vidas.</p>
+            <button id="generate-pix">Gerar Chave PIX</button>
+            <div id="pix-key-container">
+                <p>Use a chave PIX abaixo para realizar sua contribuição:</p>
+                <p id="pix-key"></p>
+            </div>
+        </section>
+        
+        <section id="contact" class="contact">
+            <h2>Pedidos de Orações</h2>
+            <p>Deixe aqui seu pedido de oração, receberemos no Email da igreja e iremos orar por todas as vidas.</p>
+            <div class="contact-form-container">
+                <h3>Pedidos de Oração</h3>
+                <form id="prayerRequestForm">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+        
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+        
+                    <label for="prayerRequest">Seu Pedido de Oração:</label>
+                    <textarea id="prayerRequest" name="prayerRequest" rows="5" required></textarea>
+        
+                    <button type="submit">Enviar Pedido</button>
+                </form>
+            </div>
+        </section>        
+    </main>
+
+    <section id="faq" class="faq">
+        <h2>Perguntas Frequentes</h2>
+        <div class="faq-item">
+            <h3 onclick="toggleFAQ(1)"><i class="fas fa-question-circle"></i>Porquê um site?</h3>
+            <div id="faq1" class="faq-answer">
+                <p>Para que mesmo distante, todos os irmãos consigam participar dos cultos que rolam durante a semana.</p>
+                <p>Mesmo em casa, você receberá as bençãos que Deus tem sobre a sua Vida.</p>
+                <p>mas sempre que existir uma oportunidade, não deixe de vir nos visitar</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <h3 onclick="toggleFAQ(2)">
+                <i class="fas fa-question-circle"></i> Como posso contribuir para a missão e crescimento da nossa igreja?
+            </h3>
+            <div id="faq2" class="faq-answer">
+                <p>Você pode contribuir para a missão e crescimento da nossa igreja através de várias formas, incluindo doações e dízimos. Seu apoio é fundamental para manter as atividades da igreja e apoiar nossos projetos e necessidades.</p>
+                <p>Na Bíblia, o dízimo é mencionado como uma forma de reconhecer e apoiar o trabalho de Deus. Um versículo que fala sobre a importância do dízimo é:</p>
+                <blockquote>
+                    <strong>Malakias 3:10</strong><br>
+                    "Tragam o dízimo inteiro ao depósito do templo, para que haja alimento em minha casa. Ponham-me à prova nisso, diz o Senhor dos Exércitos, e vejam se não abro as comportas do céu e não derramo sobre vocês tanta bênção que nem sequer terão onde guardá-la."
+                </blockquote>
+                <p>Além disso, oferecemos formulários de dízimos online para facilitar sua contribuição. Agradecemos imensamente seu apoio e dedicação!</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <h3 onclick="toggleFAQ(3)"><i class="fas fa-question-circle"></i>O que as crianças aprendem na Escolinha?</h3>
+            <div id="faq3" class="faq-answer">
+                <p>Na escolinha, as crianças se divertem com atinvidades relacionadas a biblia, essa uma das formas que criamos para apróximar cada vez mais os jovens do nosso futuro para a igreja.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <h3 onclick="toggleFAQ(4)"><i class="fas fa-question-circle"></i>Eu posso ir a igreja só de vez em quando e assistir pelo site?</h3>
+            <div id="faq4" class="faq-answer">
+                <p>Você pode sim, mas é importante estar presente a igreja em todos os domingos;</p>
+                <p>Mas caso você more longe e não tenha como se conduzir a igreja, não tem problemas, foi pensando em você e em sua familia que agora temos um site!</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <h3 onclick="toggleFAQ(5)"><i class="fas fa-question-circle"></i>E a Santa Seia?</h3>
+            <div id="faq5" class="faq-answer">
+                <p>A Santa Seia acontece sempre no segundo sábado do mês, na sede regional que fica localizada no São Marcos.</p>
+                <p>Esse é o culto mais importante do mês, e você junto com a sua familia precisa estar presente para receber o santissimo corpo e sangue de Jesus Cristo.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <h3 onclick="toggleFAQ(6)"><i class="fas fa-question-circle"></i>Quem fundou a Visão Missionária?</h3>
+            <div id="faq6" class="faq-answer">
+                <p>O fundador da Visão missionária foi o Alexandre da Rosa, caso tenha interesse em o conhecer você pode entrar na sua rede social ### ou ir na Sede mundial que fica localizada em ###.</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>&copy; Visão Missionária - Montreal.</p>
+                <p>Convidamos você e a sua familia a estarem presenter com nós aqui na igreja para receber todas as graças de Deus em sua vida</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h3>Nosso Endereço</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345087265!2d144.95373531531544!3d-37.817209979751595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf57718b2e3da4890!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1630480567986!5m2!1sen!2sau" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="./asset/js/script.js"></script>
+    <script>
+        function generatePixKey() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let pixKey = '';
+            for (let i = 0; i < 32; i++) {
+                pixKey += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return pixKey;
+        }
+
+        document.getElementById('generate-pix').addEventListener('click', () => {
+            const pixKey = generatePixKey();
+            document.getElementById('pix-key').textContent = pixKey;
+            document.getElementById('pix-key-container').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
