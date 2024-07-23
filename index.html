@@ -11,42 +11,85 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./arquivos/Css/style.css">
     <link rel="stylesheet" href="./arquivos/Css/bot.css">
     <style>
-        body {
-            font-family: 'Raleway', sans-serif;
-        }
+        /* Importando o Bootstrap */
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css');
 
-        .navbar {
-            background-color: #000;
-        }
+/* Estilos Globais */
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #f5f5f5;
+}
 
-        .navbar-brand img {
-            height: 50px;
-        }
+/* Navbar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./arquivos/Images/BackGroudBanner.png') no-repeat center center;
-            background-size: cover;
-            color: #fff;
-            padding: 100px 0;
-            text-align: center;
-        }
+.navbar-brand img {
+    height: 50px;
+}
 
-        .hero-section h1 {
-            font-size: 48px;
-            font-weight: bold;
-        }
+.navbar-nav .nav-link {
+    color: #f5f5f5 !important;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
 
-        .hero-section .btn {
-            margin: 10px;
-            font-size: 20px;
-            padding: 15px 30px;
-            background-color: #00aaff38;
-            border-radius: 30vh;
-            animation: pulse 2s infinite;
+.navbar-nav .nav-link:hover {
+    color: #00aaff !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./arquivos/Images/BackGroudBanner.png') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    padding: 120px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.5), transparent);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0.4;
+}
+
+.hero-section h1 {
+    font-size: 60px;
+    font-weight: 700;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    margin-bottom: 20px;
+}
+
+.hero-section .btn {
+    margin: 10px;
+    font-size: 22px;
+    padding: 15px 30px;
+    background-color: #00aaff;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 2;
+    position: relative;
+    animation: pulse 2s infinite;
             transition: background 0.10s ease-in-out, transform 0.3s ease-in-out;
         }
 
@@ -78,372 +121,631 @@
             border-radius: 30vh;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 42px;
-            font-weight: bold;
-            margin-bottom: 50px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+/* Section Title */
+.section-title {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #00aaff;
+}
 
-        .skills .skill-bar span {
-            display: block;
-            height: 100%;
-            background: linear-gradient(90deg, #00aaff 0%, #015a86 100%);
-            border-radius: 30px;
-            position: relative;
-        }
+/* Skills */
+.skills .skill-bar {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+}
 
-        .portfolio .carousel-item img {
-            height: 500px;
-            object-fit: cover;
-        }
+.skills .skill-bar span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, #00aaff 0%, #015a86 100%);
+    border-radius: 30px;
+    position: relative;
+    transition: width 0.3s ease;
+}
 
-        .portfolio-item .card {
-            border: none;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease-in-out;
-        }
+/* Portfolio */
+.portfolio .carousel-item img {
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
 
-        .portfolio-item .card-title {
-            color: #00aaff;
-            transition: color 0.3s ease;
-        }
+.portfolio .carousel-item img:hover {
+    transform: scale(1.1);
+    filter: brightness(80%);
+}
 
-        .contact-form .form-control,
-        .contact-form .btn {
-            font-size: 18px;
-            padding: 15px;
-        }
+.portfolio-item .card {
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+}
 
-        .footer {
-            background-color: #000;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
+.portfolio-item .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
 
-        .footer .social-icons a {
-            color: #00aaff;
-            font-size: 24px;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-        }
+.portfolio-item .card-title {
+    color: #00aaff;
+    transition: color 0.3s ease;
+}
 
-        .footer .social-icons a:hover {
-            color: #00aaff;
-        }
+/* Contact Form */
+.contact-form .form-control,
+.contact-form .btn {
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
 
-        /* Estilo aprimorado para a seção Sobre mim */
-        .biography {
-            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('./arquivos/Images/luxurious-background.jpg') no-repeat center center;
-            background-size: cover;
-            color: #fff;
-            padding: 70px 30px;
-            position: relative;
-            overflow: hidden;
-            border-radius: 24vh;
-        }
+.contact-form .form-control:focus,
+.contact-form .btn:hover {
+    background: rgba(0, 0, 0, 0.5);
+    border-color: #00aaff;
+}
 
-        .biography .container {
-            z-index: 2;
-            position: relative;
-        }
+/* Footer */
+.footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+}
 
-        .biography .section-title {
-            font-size: 48px;
-            font-weight: bold;
-            color: #00aaff;
-            text-transform: uppercase;
-            margin-bottom: 50px;
-        }
+.footer .social-icons a {
+    color: #00aaff;
+    font-size: 28px;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
 
-        .biography .row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+.footer .social-icons a:hover {
+    color: #0077cc;
+}
 
-        .biography img {
-            border: 8px solid #00aaff;
-            border-radius: 50%;
-            max-width: 100%;
-            transition: transform 0.3s ease-in-out;
-        }
+/* Biography */
+.biography {
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('./arquivos/Images/luxurious-background.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    padding: 80px 40px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    text-align: center;
+}
 
-        .biography img:hover {
-            transform: scale(1.1);
-        }
+.biography .section-title {
+    font-size: 50px;
+    font-weight: 700;
+    color: #00aaff;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
 
-        .biography .bio-content {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 30px;
-            border-radius: 15px;
-        }
+.biography .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
 
-        .biography p {
-            font-size: 20px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
+.biography img {
+    border: 8px solid #00aaff;
+    border-radius: 50%;
+    max-width: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
 
-        .biography a.btn {
-            background-color: #00aaff;
-            border-color: #002a3f;
-            color: #000;
-            font-size: 18px;
-            padding: 12px 30px;
-            margin-top: 20px;
-            transition: background-color 0.3s ease-in-out;
-        }
+.biography img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
 
-        .biography a.btn:hover {
-            background-color: #012638;
-        }
+.biography .bio-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 15px;
+    z-index: 1;
+}
 
-        .biography .background-decoration {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-            background: url('./arquivos/Images/background-decoration.png') no-repeat center center;
-            background-size: cover;
-            opacity: 0.3;
-        }
+.biography p {
+    font-size: 22px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
 
-        /* Novo estilo para seções de projetos */
-        .project-section {
-            padding: 100px 0;
-        }
+.biography a.btn {
+    background-color: #00aaff;
+    border-color: #002a3f;
+    color: #000;
+    font-size: 18px;
+    padding: 12px 30px;
+    margin-top: 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
 
-        .project-section hgroup {
-            text-align: center;
-        }
+.biography a.btn:hover {
+    background-color: #0077cc;
+}
 
-        .project-section h2 {
-            font-size: 42px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
+/* Background Decoration */
+.biography .background-decoration {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background: url('./arquivos/Images/background-decoration.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.2;
+}
 
-        .project-section h3 {
-            font-size: 28px;
-            font-weight: normal;
-            margin-bottom: 50px;
-        }
+/* Project Section */
+.project-section {
+    padding: 120px 0;
+}
 
-        .project-section .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+.project-section hgroup {
+    text-align: center;
+}
 
-        .project-section figure {
-            position: relative;
-            overflow: hidden;
-        }
+.project-section h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #00aaff;
+}
 
-        .project-section img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.3s ease-in-out;
-        }
+.project-section h3 {
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 50px;
+}
 
-        .project-section img:hover {
-            transform: scale(1.1);
-        }
+.project-section .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
 
-        .project-section figcaption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            text-align: center;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
+.project-section figure {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
 
-        .project-section figcaption a {
-            color: #d4af37;
-            font-size: 18px;
-        }
+.project-section img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
 
-        .project-section figure:hover figcaption {
-            opacity: 1;
-        }
+.project-section img:hover {
+    transform: scale(1.1);
+}
+
+.project-section figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-section figcaption a {
+    color: #d4af37;
+    font-size: 18px;
+}
+
+.project-section figure:hover figcaption {
+    opacity: 1;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .hero-section h1 {
+        font-size: 48px;
+    }
+
+    .section-title,
+    .biography .section-title,
+    .project-section h2 {
+        font-size: 36px;
+    }
+
+    .biography img {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 36px;
+    }
+
+    .section-title,
+    .biography .section-title,
+    .project-section h2 {
+        font-size: 30px;
+    }
+
+    .biography img {
+        max-width: 120px;
+    }
+}
+
     </style>
 </head>
 
 <body>
     <!-- Navegação principal -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#"><strong>CodeZone</strong></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#hero">Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Sobre Mim</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfólio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
-                </ul>
-            </div>
-        </div>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>CodeZone</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#biography">Biografia</a></li>
+            <li><a href="#skills">Habilidades</a></li>
+            <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#automation-projects">Automação</a></li>
+            <li><a href="#game-development">Jogos</a></li>
+            <!--<li><a href="#blog">Blog</a></li>-->
+            <li><a href="#contact" role="button">Contatos</a></li>
+        </ul>
     </nav>
 
-    <!-- Seção de apresentação -->
-    <header class="hero-section" id="hero">
-        <div class="container">
-            <h1 class="animate__animated animate__fadeInDown">Bem-vindo ao CodeZone</h1>
-            <p class="animate__animated animate__fadeInDown">Seu destino para projetos incríveis e inovação tecnológica.</p>
-            <a href="#portfolio" class="btn btn-primary animate__animated animate__fadeInDown">Ver Portfólio</a>
-            <a href="#contact" class="btn btn-secondary animate__animated animate__fadeInDown">Contato</a>
+    <!-- Seção Hero (cabeçalho) -->
+    <header class="hero-section">
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="typing-effect">Bem vindo ao CodeZone</h1>
+            <div class="button">
+                <a href="#biography" class="btn btn-primary btn-lg">Saiba mais</a>
+                <a href="#contact" class="btn btn-primary btn-lg">Contrate-me</a>
+            </div>
         </div>
     </header>
 
-    <!-- Seção Sobre Mim -->
-    <section class="biography" id="about">
-        <div class="container">
-            <h2 class="section-title">Sobre Mim</h2>
-            <div class="row">
-                <div class="col-lg-6">
-                    <img src="./arquivos/Images/Logo.png" alt="Minha Foto">
-                </div>
-                <div class="col-lg-6">
-                    <div class="bio-content">
-                        <p>Olá! Eu sou desenvolvedor front-end com paixão por criar interfaces de usuário incríveis. Tenho experiência em HTML, CSS, JavaScript e diversas bibliotecas e frameworks modernos.</p>
-                        <p>Adoro enfrentar novos desafios e encontrar soluções criativas para problemas complexos. No meu tempo livre, gosto de explorar novas tecnologias e contribuir para projetos de código aberto.</p>
-                        <a href="#" class="btn btn-primary">Download CV</a>
+    <!-- Seção Biografia -->
+    <main class="container">
+        <section id="biography" class="biography parallax" data-aos="fade-up">
+            <div class="background-decoration"></div>
+            <div class="container">
+                <div class="section-title">Sobre mim</div>
+                <div class="row">
+                    <div class="col-md-6 text-center" data-aos="fade-right">
+                        <img src="./arquivos/Images/about-biograph.jpg" alt="Biografia" class="img-fluid rounded-circle shadow-lg">
+                    </div>
+                    <div class="col-md-6 bio-content" data-aos="fade-left">
+                        <p>Sou apaixonado por transformar ideias em realidade digital. Com experiência sólida como Desenvolvedor Web, meu objetivo é criar soluções inovadoras que não apenas atendam, mas superem as expectativas dos clientes. Minha especialidade também inclui desenvolvimento de automações personalizadas, proporcionando eficiência e escalabilidade aos processos.</p>
+                        <p>Estou sempre em busca de desafios que me permitam explorar novas tecnologias e entregar resultados que impulsionem negócios. Vamos transformar sua visão em um projeto que não apenas funcione, mas impressione.</p>
+                        <a href="./arquivos/Outros Arquivos/Curriculum.pdf" class="btn btn-primary" target="_blank">Acessar Meu Currículo</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Seção de Habilidades -->
-    <section class="skills project-section" id="skills">
-        <div class="container">
-            <h2 class="section-title">Habilidades</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <h3>HTML</h3>
-                    <div class="skill-bar">
+        <!-- Seção Habilidades -->
+        <section id="skills" class="skills parallax" data-aos="fade-up">
+            <hgroup>
+                <h2>Habilidades</h2>
+                <h3>Minhas competências técnicas</h3>
+            </hgroup>
+            <div class="grid">
+                <div class="skill" data-aos="fade-right">
+                    <h5>Python</h5>
+                    <div class="skill-bar" style="--percentage: 90%;">
                         <span style="width: 90%;"></span>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <h3>CSS</h3>
-                    <div class="skill-bar">
+                <div class="skill" data-aos="fade-up">
+                    <h5>JavaScript</h5>
+                    <div class="skill-bar" style="--percentage: 85%;">
                         <span style="width: 85%;"></span>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <h3>JavaScript</h3>
-                    <div class="skill-bar">
+                <div class="skill" data-aos="fade-left">
+                    <h5>HTML5</h5>
+                    <div class="skill-bar" style="--percentage: 95%;">
+                        <span style="width: 95%;"></span>
+                    </div>
+                </div>
+                <div class="skill" data-aos="fade-right">
+                    <h5>CSS3</h5>
+                    <div class="skill-bar" style="--percentage: 90%;">
+                        <span style="width: 90%;"></span>
+                    </div>
+                </div>
+                <div class="skill" data-aos="fade-up">
+                    <h5>Node.js</h5>
+                    <div class="skill-bar" style="--percentage: 80%;">
                         <span style="width: 80%;"></span>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <h3>React</h3>
-                    <div class="skill-bar">
-                        <span style="width: 75%;"></span>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Seção de Portfólio -->
-    <section class="portfolio project-section" id="portfolio">
-        <div class="container">
-            <h2 class="section-title">Portfólio</h2>
+        <!-- Seção Portfólio -->
+        <section id="portfolio" class="portfolio parallax" data-aos="fade-up">
+            <hgroup>
+                <h2>Portfólio De Sites</h2>
+                <h3>Meus projetos recentes</h3>
+            </hgroup>
+            <div class="grid">
+                <figure>
+                    <img src="./arquivos/Images/Cap - OásisVerde.jpg" alt="Projeto 1" />
+                    <figcaption>
+                        <a href="https://jairmiguel-dev.github.io/O-sisVerde-/index.html" target="_blank">Oasis Verde</a>
+                        <br>
+                        <a href="https://jairmiguel-dev.github.io/O-sisVerde-/index.html" class="btn btn-secondary btn-sm" target="_blank">Visualizar Página</a>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="./arquivos/Images/igrejaOnline.jpg" alt="Projeto 2" />
+                    <figcaption>
+                        <a href="https://jairmiguel-dev.github.io/IgrejaOnline/" target="_blank">Igreja Online</a>
+                        <br>
+                        <a href="https://jairmiguel-dev.github.io/IgrejaOnline/" class="btn btn-secondary btn-sm" target="_blank">Visualizar Página</a>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="https://via.placeholder.com/1200x600" alt="Projeto 3" />
+                    <figcaption>
+                        <a href="#" target="_blank">Em fase de Desenvolvimento</a>
+                        <br>
+                        <a href="#" class="btn btn-secondary btn-sm" target="_blank">Null</a>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Nova Seção para Automação de Processos Repetitivos -->
+        <section id="automation-projects" class="project-section">
+            <hgroup>
+                <h2>Projetos de Automação</h2>
+                <h3>Automatizando processos para eficiência</h3>
+            </hgroup>
             <div class="project-grid">
                 <figure>
-                    <img src="./arquivos/Images/portfolio1.jpg" alt="Projeto 1">
+                    <img src="./arquivos/Images/PyautoGui.png" alt="Automação 1" />
                     <figcaption>
-                        <h3>Projeto 1</h3>
-                        <a href="#">Ver Detalhes</a>
+                        <a href="#" target="_blank">Já pensou em realizar suas tarefas no computador sem mover o mouse?</a>
                     </figcaption>
                 </figure>
                 <figure>
-                    <img src="./arquivos/Images/portfolio2.jpg" alt="Projeto 2">
+                    <img src="./arquivos/Images/Raspagem.png" alt="Automação 2" />
                     <figcaption>
-                        <h3>Projeto 2</h3>
-                        <a href="#">Ver Detalhes</a>
-                    </figcaption>
-                </figure>
-                <figure>
-                    <img src="./arquivos/Images/portfolio3.jpg" alt="Projeto 3">
-                    <figcaption>
-                        <h3>Projeto 3</h3>
-                        <a href="#">Ver Detalhes</a>
-                    </figcaption>
-                </figure>
-                <figure>
-                    <img src="./arquivos/Images/portfolio4.jpg" alt="Projeto 4">
-                    <figcaption>
-                        <h3>Projeto 4</h3>
-                        <a href="#">Ver Detalhes</a>
+                        <a href="#" target="_blank">Estude a Concorrência sem precisar ir até eles</a>
                     </figcaption>
                 </figure>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Seção de Contato -->
-    <section class="contact project-section" id="contact">
-        <div class="container">
-            <h2 class="section-title">Contato</h2>
-            <form class="contact-form">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="name">Nome</label>
-                        <input type="text" class="form-control" id="name" placeholder="Seu Nome">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Seu Email">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="message">Mensagem</label>
-                    <textarea class="form-control" id="message" rows="4" placeholder="Sua Mensagem"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
-        </div>
-    </section>
+        <!-- Nova Seção para Criação de Jogos -->
+        <section id="game-development" class="project-section">
+            <hgroup>
+                <h2>Criação de Jogos</h2>
+                <h3>Projetos de jogos desenvolvidos</h3>
+            </hgroup>
+            <div class="project-grid">
+                <figure>
+                    <img src="./arquivos/Images/3.png" alt="Jogo 1" />
+                    <figcaption>
+                        <a href="#" target="_blank">Estamos desenvolvendo</a>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Seção Blog -->
+        <!--<section id="blog" class="blog parallax" data-aos="fade-up">
+            <hgroup>
+                <h2>Blog</h2>
+                <h3>Últimos artigos</h3>
+            </hgroup>
+            <div class="grid">
+                <figure>
+                    <img src="./arquivos/Images/Estrátegias.png" alt="Artigo 1" />
+                    <figcaption><a href="#">Estrátegias da CodeZone</a></figcaption>
+                </figure>
+                <figure>
+                    <img src="./arquivos/Images/AI.png" alt="Artigo 2" />
+                    <figcaption><a href="#">Porquê devo entrar no mundo Digital?</a></figcaption>
+                </figure>
+                <figure>
+                    <img src="./arquivos/Images/portfólio.png" alt="Artigo 3" />
+                    <figcaption><a href="#">Artigo 3</a></figcaption>
+                </figure>
+            </div>
+        </section>-->
+
+        <!-- Seção Contatos -->
+        <section id="contact" class="contact parallax" data-aos="fade-up">
+            <hgroup>
+                <h2>Contatos</h2>
+                <h3>Fale comigo</h3>
+            </hgroup>
+            <form action="https://formsubmit.co/026b7181c43de3f8ae513e5a6e7373bc" method="POST" class="contact-form grid">
+                <input type="text" id="name" name="name" placeholder="Seu nome" aria-label="Nome" required />
+                <input type="email" id="email" name="email" placeholder="Seu email" aria-label="Email" required />
+                <textarea type="text" id="message" name="message" rows="3" placeholder="Sua mensagem" aria-label="Mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+                <input type="hidden" name="_next" value="https://jairmiguel-dev.github.io/CodeZoneWeb/thanks.html">
+                <input type="hidden" name="_subject" value="New submission!">
+            </form>            
+        </section>
+    </main>
 
     <!-- Rodapé -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 CodeZone. Todos os direitos reservados.</p>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-            </div>
-        </div>
+    <footer class="container">
+        <small><a href="#">Política de Privacidade</a> • <a href="#">Termos de Uso</a></small>
     </footer>
 
-    <!-- Scripts externos -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="arquivos/Js/animation.js"></script>
+    <script src="arquivos/Js/py.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            duration: 1200,
+        });
+
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Contagem animada
+        document.addEventListener('DOMContentLoaded', function () {
+            const counters = document.querySelectorAll('.count');
+            const speed = 200; // Velocidade da contagem
+
+            counters.forEach(counter => {
+                const animate = () => {
+                    const value = +counter.getAttribute('data-count');
+                    const data = +counter.innerText;
+                    const time = value / speed;
+                    if (data < value) {
+                        counter.innerText = Math.ceil(data + time);
+                        setTimeout(animate, 1);
+                    } else {
+                        counter.innerText = value;
+                    }
+                };
+                animate();
+            });
+        });
     </script>
 </body>
 
