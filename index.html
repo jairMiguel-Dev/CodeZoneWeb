@@ -279,93 +279,260 @@
             opacity: 1;
         }
 
+        /* Estilos para dispositivos extra pequenos (celulares) */
+        @media (max-width: 479px) {
+            .hero-section h1 {
+                font-size: 36px;
+            }
+
+            .hero-section .btn {
+                font-size: 18px;
+                padding: 10px 20px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .biography p {
+                font-size: 18px;
+            }
+
+            .biography .bio-content {
+                padding: 20px;
+            }
+
+            .biography a.btn {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+
+            .project-section h2 {
+                font-size: 32px;
+            }
+
+            .project-section h3 {
+                font-size: 24px;
+            }
+
+            .contact-form .form-control,
+            .contact-form .btn {
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+
+        /* Estilos para dispositivos pequenos (smartphones) */
+        @media (min-width: 480px) {
+            body {
+                background-color: lightcyan;
+            }
+
+            .container {
+                width: 95%;
+                padding: 15px;
+                font-size: 16px;
+            }
+
+            .hero-section h1 {
+                font-size: 40px;
+            }
+
+            .hero-section .btn {
+                font-size: 18px;
+                padding: 12px 25px;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+
+            .biography p {
+                font-size: 18px;
+            }
+
+            .biography .bio-content {
+                padding: 25px;
+            }
+
+            .biography a.btn {
+                font-size: 18px;
+                padding: 12px 25px;
+            }
+
+            .project-section h2 {
+                font-size: 34px;
+            }
+
+            .project-section h3 {
+                font-size: 26px;
+            }
+
+            .contact-form .form-control,
+            .contact-form .btn {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
+
         /* Estilos para dispositivos médios (tablets) */
-@media (min-width: 768px) {
-    body {
-        background-color: lightgreen;
-    }
+        @media (min-width: 768px) {
+            body {
+                background-color: lightgreen;
+            }
 
-    .container {
-        width: 80%;
-        padding: 20px;
-    }
-}
+            .container {
+                width: 80%;
+                padding: 20px;
+                font-size: 18px;
+            }
 
-/* Estilos para dispositivos grandes (desktops) */
-@media (min-width: 1024px) {
-    body {
-        background-color: lightcoral;
-    }
+            .hero-section h1 {
+                font-size: 44px;
+            }
 
-    .container {
-        width: 60%;
-        padding: 30px;
-    }
-}
+            .hero-section .btn {
+                font-size: 20px;
+                padding: 15px 30px;
+            }
 
-/* Estilos para dispositivos extra grandes (largos desktops) */
-@media (min-width: 1440px) {
-    body {
-        background-color: lightgoldenrodyellow;
-    }
+            .section-title {
+                font-size: 36px;
+            }
 
-    .container {
-        width: 50%;
-        padding: 40px;
-    }
-}
+            .biography p {
+                font-size: 20px;
+            }
 
-/* Estilos para dispositivos pequenos (smartphones) */
-@media (min-width: 480px) {
-    body {
-        background-color: lightcyan;
-    }
+            .biography .bio-content {
+                padding: 30px;
+            }
 
-    .container {
-        width: 95%;
-        padding: 15px;
-        font-size: 16px;
-    }
-}
+            .biography a.btn {
+                font-size: 18px;
+                padding: 15px 30px;
+            }
 
-/* Estilos para dispositivos médios (tablets) */
-@media (min-width: 768px) {
-    body {
-        background-color: lightgreen;
-    }
+            .project-section h2 {
+                font-size: 36px;
+            }
 
-    .container {
-        width: 80%;
-        padding: 20px;
-        font-size: 18px;
-    }
-}
+            .project-section h3 {
+                font-size: 28px;
+            }
 
-/* Estilos para dispositivos grandes (desktops) */
-@media (min-width: 1024px) {
-    body {
-        background-color: lightcoral;
-    }
+            .contact-form .form-control,
+            .contact-form .btn {
+                font-size: 18px;
+                padding: 15px;
+            }
+        }
 
-    .container {
-        width: 70%;
-        padding: 30px;
-        font-size: 20px;
-    }
-}
+        /* Estilos para dispositivos grandes (desktops) */
+        @media (min-width: 1024px) {
+            body {
+                background-color: lightcoral;
+            }
 
-/* Estilos para dispositivos extra grandes (largos desktops) */
-@media (min-width: 1440px) {
-    body {
-        background-color: lightgoldenrodyellow;
-    }
+            .container {
+                width: 70%;
+                padding: 30px;
+                font-size: 20px;
+            }
 
-    .container {
-        width: 60%;
-        padding: 40px;
-        font-size: 22px;
-    }
-}
+            .hero-section h1 {
+                font-size: 48px;
+            }
+
+            .hero-section .btn {
+                font-size: 20px;
+                padding: 15px 30px;
+            }
+
+            .section-title {
+                font-size: 42px;
+            }
+
+            .biography p {
+                font-size: 20px;
+            }
+
+            .biography .bio-content {
+                padding: 30px;
+            }
+
+            .biography a.btn {
+                font-size: 18px;
+                padding: 15px 30px;
+            }
+
+            .project-section h2 {
+                font-size: 42px;
+            }
+
+            .project-section h3 {
+                font-size: 28px;
+            }
+
+            .contact-form .form-control,
+            .contact-form .btn {
+                font-size: 20px;
+                padding: 15px;
+            }
+        }
+
+        /* Estilos para dispositivos extra grandes (largos desktops) */
+        @media (min-width: 1440px) {
+            body {
+                background-color: lightgoldenrodyellow;
+            }
+
+            .container {
+                width: 60%;
+                padding: 40px;
+                font-size: 22px;
+            }
+
+            .hero-section h1 {
+                font-size: 50px;
+            }
+
+            .hero-section .btn {
+                font-size: 22px;
+                padding: 20px 35px;
+            }
+
+            .section-title {
+                font-size: 48px;
+            }
+
+            .biography p {
+                font-size: 22px;
+            }
+
+            .biography .bio-content {
+                padding: 40px;
+            }
+
+            .biography a.btn {
+                font-size: 20px;
+                padding: 20px 40px;
+            }
+
+            .project-section h2 {
+                font-size: 48px;
+            }
+
+            .project-section h3 {
+                font-size: 32px;
+            }
+
+            .contact-form .form-control,
+            .contact-form .btn {
+                font-size: 22px;
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 
@@ -379,7 +546,7 @@
             <li><a href="#biography">Biografia</a></li>
             <li><a href="#skills">Habilidades</a></li>
             <li><a href="#portfolio">Portfólio</a></li>
-            <li><a href="#automation-projects">Automação</a></li>
+            <li><a href="#automation-projects">Automação</li>
             <li><a href="#game-development">Jogos</a></li>
             <!--<li><a href="#blog">Blog</a></li>-->
             <li><a href="#contact" role="button">Contatos</a></li>
